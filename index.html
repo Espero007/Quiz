@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jeu</title>
+</head>
+
+<body class="h-screen bg-[url('./ressources/image.png')] bg-center bg-cover bg-no-repeat sm:bg-left">
+
+
+    <div class="loaderContainer sm:text-xl">
+        <span class="loader"></span>
+        <p>Loading...</p>
+    </div>
+
+    <div id="globalContainer" class="h-full p-4 lg:p-6">
+
+        <!-- Start Game Interface -->
+
+        <section id="startGameInterface">
+
+        </section>
+
+        <!-- Game play interface -->
+
+        <section id="gamePlayInterface" class="none">
+
+            <div class="flex justify-end" id="topElementsContainer">
+
+                <!-- topElementsContainer -->
+
+                <div class="text-white text-3xl relative z-10 sm:text-4xl" id="scoreContainer">
+
+                    <!-- ScoreContainer -->
+
+                    <p class="inline-block text-lg sm:text-2xl">Score :</p>
+                    <p class="px-4 inline-block font-semibold sm:px-6" id="score">10</p>
+
+                </div>
+
+                <nav class=" text-white text-3xl sm:text-4xl">
+
+                    <button id="navBtn" class="relative z-10">&#9776;</button>
+
+                    <div class="sideNavigation absolute z-0 left-0 right-0 mt-2 bg-white/60 p-4 opacity-0 origin-[top_center] none"
+                        id="sideNavigation">
+
+                        <button id="restartBtn"
+                            class="text-black text-lg uppercase flex text-bold gap-3 p-3 hover:bg-black/20 w-full rounded-md">
+                            <span> <img src="./ressources/Restart.png" alt="restart" class="h-[30px]">
+                            </span>
+
+                            <span>Restart Game</span>
+                        </button>
+                    </div>
+
+                </nav>
+
+
+            </div>
+
+            <main class="h-[90vh] flex flex-col align-items-center justify-center sm:max-w-[750px] sm:mx-auto"
+                id="mainElements">
+
+                <!-- Question -->
+
+                <h1 class="text-white text-xl sm:text-2xl sm:leading-10">
+                    <span id="questionCounterTxt" class="font-bold"></span> /
+                    <span id="question"></span>
+                </h1>
+
+                <!-- AnswersOptions -->
+
+                <div id="answersCont" class="text-black mt-5 text-lg sm:text-xl">
+                    <button>
+                        <p>A</p>
+                        <p class="optionTxt"></p>
+                    </button>
+
+                    <button>
+                        <p>B</p>
+                        <p class="optionTxt"></p>
+                    </button>
+
+                    <button>
+                        <p>C</p>
+                        <p class="optionTxt"></p>
+                    </button>
+                </div>
+
+                <!-- Skip Button -->
+
+                <button
+                    class="bg-white py-3 w-[210px] uppercase font-bold rounded-md mt-7 block mx-auto sm:text-lg sm:w-[250px] sm:mt-5"
+                    id="skipBtn">Skip the question
+                </button>
+
+
+                <!-- Pop-Ups -->
+
+                <div id="popUpsCont" class="relative">
+
+                    <p id="correctAnswer">
+                        <span>
+                            <img src="./ressources/Fichier 2.png" alt="correct answer">
+                        </span>
+                        <span>Bonne réponse !</span>
+                    </p>
+
+                    <p id="wrongAnswer">
+                        <span>
+                            <img src="./ressources/Fichier 1.png" alt="correct answer">
+                        </span>
+
+                        <span>Réessayez encore</span>
+                    </p>
+                </div>
+
+            </main>
+
+        </section>
+
+        <!-- EndGame Interface -->
+
+        <section id="endGameInterface" class="absolute top-0 bottom-0 right-0 left-0 none">
+
+            <div id="cont" class="flex flex-col h-full justify-center items-center gap-y-8">
+                <!-- Container -->
+
+                <p class="text-white text-2xl font-bold lg:text-3xl">ENDGAME</p>
+                <p class="text-white text-base lg:text-xl">Try again !</p>
+
+                <button class="bg-white/50 p-5 rounded-md lg:p-8">
+                    <span><img src="./ressources/Restart-white.png" alt="restart" class="h-[30px]"
+                            id="restartBtn_2"></span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+
+</html>
